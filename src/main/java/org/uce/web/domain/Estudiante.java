@@ -12,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -26,7 +27,7 @@ public class Estudiante {
     private String correo;
     private String telefono;
     private String genero;
-    private String fechaNacimiento;
+    private LocalDate fechaNacimiento;
     private String password;
     @ManyToMany
     @JoinTable(name = "estudiante_materia", joinColumns = @JoinColumn(name = "estudiante_id"), inverseJoinColumns = @JoinColumn(name = "materia_id"))
@@ -36,7 +37,7 @@ public class Estudiante {
     }
 
     public Estudiante(Long id, String nombre, String apellido, String cedula, String correo, String telefono,
-            String genero, String fechaNacimiento, String password, List<Materia> materia) {
+            String genero, LocalDate fechaNacimiento, String password, List<Materia> materia) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
