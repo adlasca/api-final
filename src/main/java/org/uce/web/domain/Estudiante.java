@@ -3,15 +3,10 @@ package org.uce.web.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import java.time.LocalDate;
 
 @Entity
@@ -29,15 +24,12 @@ public class Estudiante {
     private String genero;
     private LocalDate fechaNacimiento;
     private String password;
-    @ManyToMany
-    @JoinTable(name = "estudiante_materia", joinColumns = @JoinColumn(name = "estudiante_id"), inverseJoinColumns = @JoinColumn(name = "materia_id"))
-    private List<Materia> materia;
 
     public Estudiante() {
     }
 
     public Estudiante(Long id, String nombre, String apellido, String cedula, String correo, String telefono,
-            String genero, LocalDate fechaNacimiento, String password, List<Materia> materia) {
+            String genero, LocalDate fechaNacimiento, String password) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -47,7 +39,6 @@ public class Estudiante {
         this.genero = genero;
         this.fechaNacimiento = fechaNacimiento;
         this.password = password;
-        this.materia = materia;
     }
 
 }

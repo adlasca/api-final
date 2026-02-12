@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.uce.web.application.MateriaService;
 import org.uce.web.application.representation.MateriaRepresentation;
-import org.uce.web.domain.Materia;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
